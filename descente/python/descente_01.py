@@ -2,13 +2,10 @@
 
 # Descente de gradient classique -- 2 variables
 
-from descente import *
-from descente_stochastique import *
+from descente import affiche_descente # type: ignore
+from descente import graphique_descente_2var_2d # type: ignore
+from descente_stochastique import affiche_descente_stochastique
 from descente_lot import *
-
-
-
-
 
 def exemple1():
     # fonction de 2 variables
@@ -24,7 +21,7 @@ def exemple1():
     print("--- Descente de gradient ---")
     X0 = np.array([2, 1])    
     mon_delta = 0.2
-    X0 = np.array([-1, -1])    
+ #   X0 = np.array([-1, -1])    
     mon_delta = 0.1    
     affiche_descente(f, grad_f, X0, delta=mon_delta, nmax = 21)
     graphique_descente_2var_2d(f, grad_f, X0, delta=mon_delta, nmax = 10, zone = (-2.5,2.5,-1.5,1.5) ) 
@@ -42,6 +39,6 @@ def exemple2():
     return
 
 
-# exemple1()
+#exemple1()
 exemple2()    
 

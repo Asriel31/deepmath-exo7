@@ -6,7 +6,7 @@
 from descente_lot import *
 
 
-def points_sur_cercle(xc,yc,r,num=5,ecart=0):
+def points_sur_cercle(xc,yc,r,num=5,ecart:float=0):
     points = []
     for i in range(num):
         theta = 2*np.pi*np.random.random()
@@ -17,7 +17,7 @@ def points_sur_cercle(xc,yc,r,num=5,ecart=0):
     return points
 
 
-def points_sur_cercle_avec_angles(xc,yc,r,angles,ecart=0):
+def points_sur_cercle_avec_angles(xc,yc,r,angles,ecart:float=0):
     # angles en degrés
     points = []
     for theta in angles:

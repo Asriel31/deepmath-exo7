@@ -55,7 +55,7 @@ def graphique_descente_2var_2d(f, grad_f, X0, delta=0.1, nmax=10, zone = (-3.0,3
     # 3. affichage
     # pour intro 
     niveaux = [1.64, 2.95, 8.22]
-    # plt.contour(X, Y, Z, niveaux, colors='black')
+    plt.contour(X, Y, Z, niveaux, colors='black')
     plt.contour(X, Y, Z, 30, colors='black')
 
     plt.scatter(0,0, color='blue')  # minimum
@@ -110,24 +110,22 @@ def graphique_descente_1var(f, grad_f, X0, delta=0.1, nmax=10):
     if (nmax==11) and (delta!=0.2):
         xmin, xmax = -3, 3
         plt.axis([xmin,xmax,-1,11])
-    
-        
+           
     num = 100
     VX = np.linspace(xmin, xmax, num)
     #1 Graphe de la fonctions
     VY = f(VX)
 
-
-    
     plt.plot(VX,VY,color='blue')
 
     # 2. Points et gradients sur l'axe
     liste_X, liste_grad = descente(f, grad_f, X0, delta=delta, nmax=nmax)
     for x in liste_X:    # points
         plt.scatter(x, 0, color='red')
-    
+
     for i in range(len(liste_X)-1):    # flèches
-        plt.arrow(liste_X[i],0, *(-delta*liste_grad[i]),0, linewidth=2, color='orange', length_includes_head=True, head_width=0.05, head_length=0.1)
+        plt.arrow(liste_X[i],0,*(-delta*liste_grad[i]),*0,
+                  linewidth=2,color='orange',length_includes_head=True,head_width=0.05,head_length=0.1)
 
     # 3. Points et gradients sur le graphe
     for x in liste_X:    # points
@@ -136,7 +134,8 @@ def graphique_descente_1var(f, grad_f, X0, delta=0.1, nmax=10):
     for i in range(len(liste_X)-1):    # flèches
         x = liste_X[i]
         xx = liste_X[i+1]
-        plt.arrow(*x, *f(x), *(xx-x), *(f(xx)-f(x)), linewidth=2, color='orange', length_includes_head=True, head_width=0.05, head_length=0.1)
+        plt.arrow(*x, *f(x), *(xx-x), *(f(xx)-f(x)), 
+                  linewidth=2, color='orange', length_includes_head=True, head_width=0.05, head_length=0.1)
 
     # 4. affichage
     plt.scatter(0,0, color='blue')  # minimum

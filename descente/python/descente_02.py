@@ -2,7 +2,9 @@
 
 # Descente de gradient classique -- 1 variable
 
-from descente import *
+import numpy as np
+from descente import affiche_descente # type: ignore
+from descente import graphique_descente_1var # type: ignore
 
 
 
@@ -18,10 +20,10 @@ def exemple1():
     # Test
     print("--- Descente de gradient ---")
     X0 = np.array([2])
-    # mon_delta = 0.2
-    mon_delta = 0.9
-    mon_delta = 1.1
-    mon_delta = 0.05
+    mon_delta = 0.2
+ #   mon_delta = 0.9
+ #    mon_delta = 1.1
+ #   mon_delta = 0.05
     affiche_descente(f, grad_f, X0, delta=mon_delta, nmax=11)
     graphique_descente_1var(f, grad_f, X0, delta=mon_delta, nmax=11)    
 
@@ -53,5 +55,5 @@ def exemple3():
 
 
 exemple1()
-# exemple2()    
+#exemple2()    
 # exemple3()  

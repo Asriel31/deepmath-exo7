@@ -9,26 +9,26 @@ import tensorflow as tf
 import numpy as np
 
 import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 from mpl_toolkits.mplot3d import Axes3D
 
 from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-
+from keras.models import Model
+from keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Fonction d'activation Heaviside
-from tensorflow.keras import backend as K
-def heaviside(x):
-	""" Définis la fonction de Heaviside qui n'est pas défini
-	par défaut dans keras. A utiliser comme fonction 
-	d'activiation lors de la définition d'une couche par exemple
-	    modele.add(Dense(4,activation=heaviside))
-	Attention il n'y a pas de guillemet ici.
-	Astuce de la formule : H(x) = 1/2 (1+|x|) """
+from keras import backend as K
 
+def heaviside(x):
+	""" Définis la fonction de Heaviside qui n'est pas défini par défaut dans keras. 
+		A utiliser comme fonction d'activiation lors de la définition d'une couche 
+		par exemple modele.add(Dense(4,activation=heaviside)) Attention il n'y a pas de guillemet ici.
+	    Astuce de la formule : H(x) = 1/2 (1+|imx|) 
+	"""
 	# return (1+x/K.abs(x))/2
 	# return (1+K.sign(x))/2
-
 	z = K.zeros_like(x)
 	return 1-K.maximum(z,K.sign(-x))
 
@@ -154,7 +154,7 @@ def affichage_approximation(modele,f,a,b,rang=0,num=100):
 	plt.plot(liste_x,f(liste_x),color='red')
 	plt.plot(liste_x,liste_y,color='blue',linewidth=2)
 	plt.tight_layout()
-	# plt.savefig('pythontf-approx.png')
+	plt.savefig('pythontf-approx.png')
 	plt.show()
 
 
@@ -199,7 +199,8 @@ def affichage_evaluation_deux_var_3d(modele,xmin,xmax,ymin,ymax,rang=0,num=20):
 	Z = sortie.reshape(X.shape)
 
 	fig = plt.figure()
-	ax = plt.axes(projection='3d')
+#	ax = plt.axes(projection='3d')
+	ax = fig.add_subplot(111, projection="3d")
 	ax.set_xlabel('axe x')
 	ax.set_ylabel('axe y')
 	ax.set_zlabel('axe z')
@@ -207,8 +208,8 @@ def affichage_evaluation_deux_var_3d(modele,xmin,xmax,ymin,ymax,rang=0,num=20):
 	ax.plot_surface(X, Y, Z)
 
 	plt.tight_layout()
-	# ax.view_init(50, -110)
-	# plt.savefig('pythontf-2var-3d.png')
+	ax.view_init(50, -110)
+	plt.savefig('pythontf-2var-3d.png')
 	plt.show()
 
 	return
@@ -234,7 +235,7 @@ def affichage_evaluation_deux_var_2d(modele,xmin,xmax,ymin,ymax,rang=0,num=30,ni
 	plt.colorbar();
 	plt.axis('equal') 
 	plt.tight_layout()
-	# plt.savefig('pythontf-2var-2d.png')
+	plt.savefig('pythontf-2var-2d.png')
 	plt.show()
 
 	return
@@ -257,7 +258,8 @@ def affichage_evaluation_trois_var(modele,xmin,xmax,ymin,ymax,zmin,zmax,rang=0,n
 	S = sortie.reshape(X.shape)
 
 	fig = plt.figure()
-	ax = plt.axes(projection='3d')
+#	ax = plt.axes(projection='3d')
+	ax = fig.add_subplot(111, projection="3d")
 	ax.set_xlabel('axe x')
 	ax.set_ylabel('axe y')
 	ax.set_zlabel('axe z')

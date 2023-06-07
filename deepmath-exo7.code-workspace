@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+        "files.exclude": {
+            "**/*.log": true,
+			"**/*.png": true,
+			"**/*.pdf": true,
+			"**/*.sty": true,
+			"**/*.tex": true,
+			"**/*.tikz": true,
+			"**/*.jpg": true,
+			"**/*.yml": true,
+			"**/*.gitignore": true,
+			"**/*.ipynb_checkpoints": true,
+			"**/__pycache__": true
+        }
+    }
+}
