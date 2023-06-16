@@ -50,7 +50,7 @@ def F(x,y):
 Z = F(X,Y)
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot(projection=Axes3D.name)
 ax.set_xlabel('axe x')
 ax.set_ylabel('axe y')
 ax.set_zlabel('axe z')

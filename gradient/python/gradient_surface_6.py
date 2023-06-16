@@ -17,7 +17,7 @@ Z = f(X,Y)
 
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot(2, 1, 1, projection=Axes3D.name)
 
 # Partie A - Surface
 ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis', edgecolor='none',alpha=1)

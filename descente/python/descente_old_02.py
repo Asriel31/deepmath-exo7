@@ -85,7 +85,7 @@ def graphique_descente_1var(X0, delta=0.1, nmax=10):
         plt.scatter(x, 0, color='red')
     
     for i in range(len(liste_X)-1):    # flèches
-        plt.arrow(liste_X[i],0, *(-delta*liste_grad[i]),0, linewidth=2, color='orange', length_includes_head=True, head_width=0.1, head_length=0.15)
+        plt.arrow(liste_X[i],0, (-delta*liste_grad[i]),0, linewidth=2, color='orange', length_includes_head=True, head_width=0.1, head_length=0.15)
 
     # 3. Points et gradients sur le graphe
     for x in liste_X:    # points

@@ -5,7 +5,7 @@
 # Newton
 #------------------------------------------
 
-from math import *
+from math import exp
 # La fonction sigma
 def sigma(x):
     return 1/(1+exp(-x))

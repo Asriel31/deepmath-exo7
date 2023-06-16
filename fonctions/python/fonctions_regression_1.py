@@ -26,7 +26,7 @@ Z = f(X,Y)
 
 def affiche_surface():
 	fig = plt.figure()
-	ax = plt.axes(projection='3d')
+	ax = fig.add_subplot(projection=Axes3D.name)
 	# Tweaking display region and labels
 	# ax.set_xlim(-3.0, 3.0)
 	# ax.set_ylim(-3.0, 3.0)

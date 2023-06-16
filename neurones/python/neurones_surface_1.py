@@ -11,7 +11,7 @@ X,Y = np.meshgrid(VX, VY)
 
 def f(x,y):
     if (0 <= x <= 1) and (0 <= y <= 1):
-	     return 1
+        return 1
     else:
         return 0
 
@@ -20,7 +20,7 @@ vec_f = np.vectorize(f)
 Z = vec_f(X,Y)
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot(projection=Axes3D.name)
 
 # Fig 1. n = 5
 ax.view_init(40, -30)

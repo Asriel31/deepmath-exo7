@@ -36,6 +36,7 @@ print(X[imin,jmin],Y[imin,jmin],Z[imin,jmin])
 
 # Points au hasard
 K = 1000
+xmin, ymin = 0, 0
 zmin = +np.inf  # infini
 for __ in range(K):
 	x = c*np.random.random()

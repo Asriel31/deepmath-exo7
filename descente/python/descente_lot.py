@@ -11,6 +11,7 @@ def descente_lot(f, grad_fi, points, K, X0, delta=0.1, epoques=3):
     liste_grad = []
     X = X0
     N = len(points)
+    gradient_lot=0
 
     for e in range(epoques):   # pour chaque époques
         j = 0                  # numérotation dans le lot

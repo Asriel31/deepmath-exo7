@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+
 n = 50
 VX = np.linspace(-3.14, 3.14, n)
 VY = np.linspace(-3.14, 3.14, n)
@@ -17,7 +18,7 @@ Z = f(X,Y)
 
 # Contours et surface
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot(2, 1, 1, projection=Axes3D.name)
 plt.axis('off')
 # ax.grid(False)
 ax.view_init(40, -115)
