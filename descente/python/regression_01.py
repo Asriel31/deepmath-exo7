@@ -4,8 +4,8 @@
 # Application à la régression linéaire
 
 
-from descente import *
-
+from python.descente import *
+import numpy as np
 
 def exemple1():
     # points (0,3), (2,4), (6,6)

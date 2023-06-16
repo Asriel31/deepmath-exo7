@@ -4,8 +4,8 @@
 # Application à la régression linéaire
 
 
-from descente import *
-from descente_stochastique import *
+from python.descente import *
+from python.descente_stochastique import *
 from descente_lot import *
 
 # Exemple pédagogique

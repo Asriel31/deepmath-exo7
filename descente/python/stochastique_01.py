@@ -4,8 +4,8 @@
 # Application à la régression linéaire
 
 
-from descente import *
-from descente_stochastique import *
+from python.descente import *
+from python.descente_stochastique import *
 
 # Exemple pédagogique
 points = [(2,0), (0,2), (4, 6), (1,0)]  # sur une parabole
