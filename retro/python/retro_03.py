@@ -3,6 +3,8 @@
 # Préparation pour retro_03_tf.py
 
 from descente import *
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 # Fonction tanh
@@ -89,7 +91,7 @@ def graphique_points():
     plt.plot(X, Y) 
 
     for x in carres_rouges:    # points
-        plt.scatter(x, 1, marker='s', color='red')
+        plt.scatter(x, 1, markerstyle='s', color='red')
     for x in ronds_bleus:    # points
         plt.scatter(x, 0, color='blue')   
 

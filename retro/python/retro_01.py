@@ -3,7 +3,8 @@
 # Descente de gradient classique -- 2 variables
 # Application à la régression linéaire
 
-from descente import *
+from python.descente import *
+import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 
 # Fonction sigma
@@ -50,7 +51,7 @@ print("Coefficients a, b, c du réseau et de la droite :", a, b, c)
 # Affichage
 def graphique_points():
     for x, y in carres_rouges:    # points
-        plt.scatter(x, y, marker='s', color='red')
+        plt.scatter(x, y , color='red')
     for x, y in ronds_bleus:    # points
         plt.scatter(x, y, color='blue')
 
@@ -100,9 +101,9 @@ def graphique_2d():
     # plt.clabel(trace, inline=True, fontsize=8)
 
     for x, y in carres_rouges:    # points
-        plt.scatter(x, y, marker='s', color='red')
+        plt.scatter(x, y, color='red', markerstyle='s',)
     for x, y in ronds_bleus:    # points
-        plt.scatter(x, y, color='blue')   
+        plt.scatter(x, y, color='blue', markerstyle='o')   
 
     plt.axis('equal')
     plt.xlim(-0.5,5.5)
@@ -130,7 +131,7 @@ def graphique_3d():
     Z = f(X,Y)
 
     fig = plt.figure()
-    ax = plt.axes(projection='3d')
+    ax = fig.add_subplot(projection='3d')
 
     # Fig 1. n = 5
     ax.view_init(30, -160)

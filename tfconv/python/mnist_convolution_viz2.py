@@ -2,21 +2,20 @@
 
 import numpy as np
 from tensorflow import keras
-# from tensorflow.keras import backend as K
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, Flatten
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Flatten
 
-
-from tensorflow.keras.models import Model
-from tensorflow.keras.models import load_model
+from keras.models import Model
+from keras.models import load_model
 
 import matplotlib.pyplot as plt
 
 ### Partie A - Création des données
 
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+from keras.datasets import mnist
+from keras.utils import to_categorical
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = mnist.load_data()
 
@@ -35,7 +34,7 @@ Y_test = to_categorical(Y_test_data, num_classes=10)
 
 # Il faut d'abord executer 'mnist_convolution_viz1.py'
 # puis on récupère le modèle :
-model = load_model('modele_mnist_viz.h5')  
+model = load_model('modele_mnist_viz.h5')
 
 my_layer = 3   # layer nb to be inspected
 

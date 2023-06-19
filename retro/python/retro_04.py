@@ -5,7 +5,7 @@
 # LOCAL MINIMA  IN TRAINING  OF DEEP NETWORKS Grzegorz 
 # Swirszcz, Wojciech Marian Czarnecki & Razvan Pascanu
 
-from descente import *
+from python.descente import *
 
 
 def relu(x):
@@ -36,7 +36,7 @@ def E(a):
 def graphique_xy():
     # Points
     for x, y in points:
-        plt.scatter(x, y, marker='s', color='blue')
+        plt.scatter(x, y, markerstyle='s', color='blue')
 
     # Fonction
     a = -1  # poids

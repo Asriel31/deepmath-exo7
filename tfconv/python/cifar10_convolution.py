@@ -1,13 +1,13 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
 
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import cifar10
+from keras.datasets import cifar10
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = cifar10.load_data()
 
@@ -87,7 +87,7 @@ modele.fit(X_train, Y_train, epochs=10, batch_size=32)
 
 # Partie D. Résultats et visualisation
 
-score = modele.evaluate(X_test, Y_test, verbose=0)
+score = modele.evaluate(X_test, Y_test, verbose='0')
 print('Test erreur (loss) :', score[0])
 print('Test précision (accuracy) :', score[1])
 

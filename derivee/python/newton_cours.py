@@ -6,20 +6,20 @@
 #------------------------------------------
 
 # La fonction f(x)
-def f(x):
+def fonct(x):
     return x**3 - 100
 
 # La fonction dérivée f'(x)
-def df(x):
+def dfonct(x):
     return 3*(x**2)    
 
 
 # Méthode de Newton 
 # x0 est le terme initial, n est le nombre d'étapes
-def newton(x0,n):  
+def newton_(x0,n):  
     x = x0
     for i in range(1,n+1):
-        x = x - f(x)/df(x)
+        x = x - fonct(x)/dfonct(x)
         # print("Etape ", i, " : ",x,"Erreur :",x-100**(1/3)) 
         # print("Etape ", i, " : ",x,"Erreur :",x-100**(1/3))
     return x
@@ -27,7 +27,7 @@ def newton(x0,n):
 
     
 print("Calcul de racine cubique de 100 par la méthode de Newton")
-print(newton(10,9))  
+print(newton_(10,9))  
 
 #------------------------------------------
 # Newton
@@ -37,7 +37,7 @@ print(newton(10,9))
 # Calcul de racine cubique de 100 avec 1000 décimales
 
 # Module décimale pour avoir une grande précision 
-from decimal import *
+from decimal import getcontext, Decimal
 
 # Precision souhaitée (par exemple 1010 décimales pour éviter les erreurs d'arrondi)
 getcontext().prec = 1010
@@ -70,7 +70,7 @@ print(sqrt3_100**3)
 # Newton
 #------------------------------------------
 
-from math import *
+from math import sin, cos
 
 # La fonction g(x)
 def g(x):

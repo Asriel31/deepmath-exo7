@@ -1,17 +1,18 @@
 
 # Tenseur avec tensorflow
-
-import tensorflow as tf
 import numpy as np
-
-from tensorflow.keras import backend as K
+from tensorflow import keras
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Partie A - Une case vide
 
 # Fonction x -> x + 2
 
 x = K.placeholder(shape=(1,))
-y = x + 2 
+y = x+2 
 f = K.function([x],[y])
 print(f([1]))
 

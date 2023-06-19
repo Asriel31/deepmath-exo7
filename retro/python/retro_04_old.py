@@ -6,6 +6,8 @@
 # Swirszcz, Wojciech Marian Czarnecki & Razvan Pascanu
 
 from descente import *
+import numpy as np
+import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # Fonction tanh
@@ -51,7 +53,7 @@ def E(a,b):
 def graphique_xy():
     # Points
     for x, y in points:
-        plt.scatter(x, y, marker='s', color='blue')
+        plt.scatter(x, y, markestyler='s', color='blue')
 
     # Fonction
     a, b = 1,-1
@@ -96,7 +98,7 @@ def graphique_ab():
     Z = E(X,Y)
 
     fig = plt.figure()
-    ax = plt.axes(projection='3d')
+    ax = fig.add_subplot(projection='3d')
     ax.set_xlabel("a axis")
     ax.set_ylabel("b axis")
     # ax.set_zlim(0,2)

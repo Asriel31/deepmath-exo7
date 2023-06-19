@@ -2,10 +2,10 @@
 
 import numpy as np
 from tensorflow import keras
-# from tensorflow.keras import backend as K
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 import matplotlib.pyplot as plt
 
@@ -29,7 +29,7 @@ def donnees(n):
     X, Y = np.meshgrid(VX, VY)
     Z = f(X, Y)
     Zbool = Z <= 0
-    Zint = Zbool.astype(np.int)
+    Zint = Zbool.astype(np.int0)
     return X, Y, Zint
 
 
@@ -124,7 +124,7 @@ X_train, Y_train = donnees_keras(n)
 
 # Calcul des poids
 # modele.fit(X_train, Y_train, epochs=10000, batch_size=len(X_train), verbose = 1)
-modele.fit(X_train, Y_train, epochs=10, batch_size=100, verbose = 1)
+modele.fit(X_train, Y_train, epochs=10, batch_size=100, verbose = "1")
 
 print(modele.summary())
 
@@ -133,7 +133,7 @@ print(modele.summary())
 Zpredict = modele.predict(X_train)
 Zpredict = Zpredict.reshape((n,n))
 Zbool = Zpredict >= 0.5
-Zint = Zbool.astype(np.int)
+Zint = Zbool.astype(np.int0)
 # print(Z)
 # print(Zpredict)
 graphique_donnees(X, Y, Zint)

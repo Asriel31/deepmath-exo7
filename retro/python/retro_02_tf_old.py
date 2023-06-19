@@ -1,9 +1,10 @@
 import numpy as np
+from python.keras_facile import *
 from tensorflow import keras
-from tensorflow.keras import backend as K
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 from keras_facile import *
 
@@ -66,7 +67,7 @@ def get_weight_grad(model, inputs, outputs):
 print('====================')
 
 
-modele.fit(X_train, Y_train, epochs=50000, batch_size=len(X_train), verbose = 1)
+modele.fit(X_train, Y_train, epochs=50000, batch_size=len(X_train), verbose = "1")
 affiche_poids(modele,0)
 affiche_poids(modele,1)
 

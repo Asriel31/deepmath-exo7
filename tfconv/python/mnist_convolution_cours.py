@@ -1,13 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, Flatten
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Flatten
 
 ### Partie A - Création des données
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+from keras.datasets import mnist
+from keras.utils import to_categorical
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = mnist.load_data()
 
@@ -46,6 +46,6 @@ print(modele.summary())
 modele.fit(X_train, Y_train, batch_size=32, epochs=5)
 
 ### Partie C - Résultats
-score = modele.evaluate(X_test, Y_test, verbose=0)
+score = modele.evaluate(X_test, Y_test, verbose='0')
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])

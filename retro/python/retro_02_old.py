@@ -3,8 +3,10 @@
 # Préparation pour retro_02_tf.py
 
 from descente import *
-
-from tensorflow.keras import backend as K
+import numpy as np
+import matplotlib.pyplot as plt
+from tensorflow import keras
+from keras import backend as K
 
 # Fonction tanh
 # sa dérivée tanh'(x) = 1 - tanh(x)**2
@@ -69,7 +71,7 @@ def graphique_points():
     # plt.clabel(trace, inline=True, fontsize=8)
 
     for x, y in carres_rouges:    # points
-        plt.scatter(x, y, marker='s', color='red')
+        plt.scatter(x, y, markerstyle='s', color='red')
     for x, y in ronds_bleus:    # points
         plt.scatter(x, y, color='blue')   
 

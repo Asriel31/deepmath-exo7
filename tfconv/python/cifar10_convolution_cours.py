@@ -1,3 +1,12 @@
+import numpy as np
+from tensorflow import keras
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Flatten, MaxPooling2D, Dropout
+from keras.preprocessing.image import ImageDataGenerator
+
+from keras.models import load_model
+
 modele = Sequential()
 
 # Première couche de convolution : 64 neurones, convolution 3x3, activation relu

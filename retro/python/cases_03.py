@@ -1,8 +1,8 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 import random
 
@@ -38,6 +38,7 @@ liste = toutes_configurations(C)
 
 def hauteur(config):  # différence entre le rang le plus haut et le rang le plus bas
     first = True
+    rang_first, rang_last =0, 0
     for i in range(len(config)):
         if config[i] == 1:
             if first:
@@ -94,7 +95,7 @@ Y_test = np.array(liste_Y[taille_train:])
 
 # Descente de gradient
 # modele.fit(X_train, Y_train, epochs=2000, batch_size=len(X_train), verbose = 1)
-modele.fit(X_train, Y_train, epochs=4000, batch_size=100, verbose = 1)
+modele.fit(X_train, Y_train, epochs=4000, batch_size=100, verbose = "1")
 
 print(modele.summary())
 

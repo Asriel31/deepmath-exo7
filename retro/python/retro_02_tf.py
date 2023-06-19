@@ -1,9 +1,11 @@
 import numpy as np
+from python.keras_facile import *
+from python.descente import *
 from tensorflow import keras
-from tensorflow.keras import backend as K
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 from keras_facile import *
 
@@ -47,8 +49,8 @@ X_train = np.array(carres_rouges+ronds_bleus)
 # rouge = 1, bleu = 0
 Y_train = np.array( [[1]]*len(carres_rouges) + [[0]]*len(ronds_bleus) )
 
-# print(X_train.shape)
-# print(Y_train.shape)
+print(X_train.shape)
+print(Y_train.shape)
 
 
 
@@ -113,7 +115,7 @@ affiche_poids(modele,1)
 
 print("Gradient à la main par différence de poids")
 lr = K.eval(mysgd.lr)  # learning rate
-
+gradient=[]
 for i in range(1):
     poids_avant = modele.get_weights()
     loss = modele.train_on_batch(X_train, Y_train)  # renvoie l'erreur avant l'application du gradient
