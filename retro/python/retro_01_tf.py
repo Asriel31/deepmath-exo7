@@ -1,13 +1,11 @@
 import numpy as np
-from python.keras_facile import *
+import matplotlib.pyplot as plt
+from retro.python.keras_facile import definir_poids, poids_a_zeros, affiche_poids
 from tensorflow import keras
 from keras import backend as K
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dense
-
-
-from keras_facile import *
 
 
 modele = Sequential()

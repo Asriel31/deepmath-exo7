@@ -1,0 +1,42 @@
+https://developer.apple.com/metal/tensorflow-plugin/
+
+Accelerate the training of machine learning models with TensorFlow right on your Mac. 
+Install base TensorFlow and the tensorflow-metal PluggableDevice to accelerate training with Metal on Mac GPUs.
+
+Get started with tensorflow-metal
+Learn about TensorFlow PluggableDevices
+Requirements
+Mac computers with Apple silicon or AMD GPUs
+macOS 12.0 or later (Get the latest beta)
+Python 3.8 or later
+Xcode command-line tools: xcode-select --install
+Get started
+1. Set up the environment
+Virtual environment:
+python3 -m venv ~/venv-metal
+source ~/venv-metal/bin/activate
+python -m pip install -U pip
+2. Install base TensorFlow
+For TensorFlow version 2.13 or later:
+python -m pip install tensorflow
+For TensorFlow version 2.12 or earlier:
+python -m pip install tensorflow-macos
+3. Install tensorflow-metal plug-in
+python -m pip install tensorflow-metal
+4. Verify
+You can verify using a simple script:
+import tensorflow as tf
+
+cifar = tf.keras.datasets.cifar100
+(x_train, y_train), (x_test, y_test) = cifar.load_data()
+model = tf.keras.applications.ResNet50(
+    include_top=True,
+    weights=None,
+    input_shape=(32, 32, 3),
+    classes=100,)
+
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)
+model.compile(optimizer="adam", loss=loss_fn, metrics=["accuracy"])
+model.fit(x_train, y_train, epochs=5, batch_size=64)
+
+

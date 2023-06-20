@@ -1,13 +1,12 @@
+import os.path
 import numpy as np
-from python.keras_facile import *
-from python.descente import *
+from descente import *
 from tensorflow import keras
 from keras import backend as K
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dense
-
-from keras_facile import *
+from keras_facile import definir_poids, poids_a_zeros, affiche_poids, evaluation
 
 
 modele = Sequential()
@@ -24,7 +23,7 @@ modele.add(Dense(2, input_dim=2, activation='sigmoid'))
 # Seconde et dernière couche : 1 neurone
 modele.add(Dense(1, activation='sigmoid'))
 
-mysgd = optimizers.SGD(lr=1)
+mysgd = optimizers.SGD(learning_rate=1)
 modele.compile(loss='mean_squared_error', optimizer=mysgd)
 
 # poids_a_zeros(modele,0)  # couche 0, tous les poids à zéros
@@ -96,14 +95,14 @@ affiche_poids(modele,1)
 # poids_a_zeros(modele,1)  # couche 0, tous les poids à zéros
 
 # modele.evaluate(X_train, Y_train)
-# lr = K.eval(mysgd.lr)  # learning rate
+# learning_rate = K.eval(mysgd.learning_rate)  # learning rate
 
 # for i in range(1):
 #     poids_avant = modele.get_weights()
 #     gradient = get_weight_grad(modele, X_train, Y_train)
 #     loss = modele.train_on_batch(X_train, Y_train)  # renvoie l'erreur avant l'application du gradient
 #     poids_apres = modele.get_weights()
-#     poids_calculer_alamain = [poids_avant[i] - lr*gradient[i] for i in range(len(poids_avant))]
+#     poids_calculer_alamain = [poids_avant[i] - learning_rate*gradient[i] for i in range(len(poids_avant))]
 #     print("\n==== Epoque numéro",i)
 
 #     print("Poids avant",poids_avant)  
@@ -114,13 +113,13 @@ affiche_poids(modele,1)
 
 
 print("Gradient à la main par différence de poids")
-lr = K.eval(mysgd.lr)  # learning rate
+learning_rate = K.eval(mysgd.learning_rate)  # learning rate
 gradient=[]
 for i in range(1):
     poids_avant = modele.get_weights()
     loss = modele.train_on_batch(X_train, Y_train)  # renvoie l'erreur avant l'application du gradient
     poids_apres = modele.get_weights()
-    gradient = [-1/lr*(poids_apres[i] - poids_avant[i]) for i in range(len(poids_avant))]
+    gradient = [-1/learning_rate*(poids_apres[i] - poids_avant[i]) for i in range(len(poids_avant))]
     print("\n==== Epoque numéro",i)
 
     print("Poids avant",poids_avant)  
