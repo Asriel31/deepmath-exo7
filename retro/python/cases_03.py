@@ -32,8 +32,8 @@ def toutes_configurations(C):
 # Test
 C = 20
 liste = toutes_configurations(C)
-# print(liste)
-# print(len(liste),C*(C-1)*(C-2)/6)
+print(liste)
+print(f'\n len de liste {len(liste)},C*(C-1)*(C-2)/6 : {C*(C-1)*(C-2)/6}')
 
 
 def hauteur(config):  # différence entre le rang le plus haut et le rang le plus bas
