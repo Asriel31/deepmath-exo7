@@ -135,9 +135,9 @@ def evaluation():
         entree = np.array([X_test[i]])
         sortie_attendue = np.array([Y_test[i]])[0]
         sortie_predite = modele.predict(entree)[0][0]
-        # print(entree)
-        # print(sortie_attendue)
-        # print(sortie_predite)
+        print(entree)
+        print(sortie_attendue)
+        print(sortie_predite)
         if round(sortie_predite) == sortie_attendue:
             nb_correct += 1
 

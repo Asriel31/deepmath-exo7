@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from retro.python.keras_facile import definir_poids, poids_a_zeros, affiche_poids
+from keras_facile.keras_facile import definir_poids, poids_a_zeros, affiche_poids
 from tensorflow import keras
 from keras import backend as K
 from keras import optimizers
