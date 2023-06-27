@@ -12,12 +12,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 from tensorflow import keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras.models import Sequential
+from keras.layers import Dense
 
 
 # Fonction d'activation Heaviside
-from tensorflow.keras import backend as K
+from keras import backend as K
 def heaviside(x):
 	""" Définis la fonction de Heaviside qui n'est pas défini
 	par défaut dans keras. A utiliser comme fonction 
@@ -257,7 +257,7 @@ def affichage_evaluation_trois_var(modele,xmin,xmax,ymin,ymax,zmin,zmax,rang=0,n
 	S = sortie.reshape(X.shape)
 
 	fig = plt.figure()
-	ax = plt.axes(projection='3d')
+	ax = fig.add_subplot(projection='3d')
 	ax.set_xlabel('axe x')
 	ax.set_ylabel('axe y')
 	ax.set_zlabel('axe z')
