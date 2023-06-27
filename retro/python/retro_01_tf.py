@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from keras_facile.keras_facile import definir_poids, poids_a_zeros, affiche_poids
+#from keras_facile import definir_poids, poids_a_zeros, affiche_poids
+import keras_facile
+from keras_facile import *
 from tensorflow import keras
 from keras import backend as K
 from keras import optimizers
@@ -37,7 +39,7 @@ print(Y_train)
 # From mpariente https://stackoverflow.com/questions/51140950/
 def get_weight_grad(model, inputs, outputs):
     """ Gets gradient of model for given inputs and outputs for all weights"""
-    grads = model.optimizer.get_gradients(model.total_loss, model.trainable_weights)
+    grads = model.optimizer.get_gradients(model. total_loss, model.trainable_weights)
     symb_inputs = (model._feed_inputs + model._feed_targets + model._feed_sample_weights)
     f = K.function(symb_inputs, grads)
     x, y, sample_weight = model._standardize_user_data(inputs, outputs)

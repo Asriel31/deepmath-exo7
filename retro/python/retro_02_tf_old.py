@@ -1,5 +1,5 @@
 import numpy as np
-from python.keras_facile import *
+from keras_facile import *
 from tensorflow import keras
 from keras import backend as K
 from keras import optimizers

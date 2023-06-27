@@ -4,7 +4,7 @@ from keras import backend as K
 from keras import optimizers
 from keras.models import Sequential
 from keras.layers import Dense
-from python.keras_facile import *
+from keras_facile import *
 
 from keras_facile import *
 
