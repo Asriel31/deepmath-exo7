@@ -3,8 +3,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+from tensorflow import keras
+from keras.datasets import mnist
+from keras.utils import to_categorical
 
 
 # Récupération des données
@@ -20,8 +21,8 @@ def affiche_chiffre_train(i):
     plt.show()
     return
 
-# for i in range(10):
-#     affiche_chiffre_train(i)
+for i in range(10):
+     affiche_chiffre_train(i)
 
 
 # Taille des données

@@ -1,13 +1,13 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 ### Partie A - Les données
 
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+from keras.datasets import mnist
+from keras.utils import to_categorical
 
 # Téléchargement des données
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = mnist.load_data()
