@@ -19,7 +19,7 @@ from keras.utils import to_categorical
 N = X_train_data.shape[0]  # 60 000 données
 
 print(X_train_data[0].shape)
-# print(X_train_data[0])
+print(X_train_data[0])
 
 X_train = np.reshape(X_train_data,(N,784))  # vecteur image
 X_test = np.reshape(X_test_data,(X_test_data.shape[0],784))
@@ -38,7 +38,7 @@ print(Y_train_data[0])
 
 ### Partie B - Réseau de neurones
 
-p = 8
+p = 50
 
 modele = Sequential()
 
@@ -58,10 +58,8 @@ modele.compile(loss='categorical_crossentropy',
 
 print(modele.summary())
 
-
 # Calcul des poids
 modele.fit(X_train, Y_train, batch_size=32, epochs=4, verbose='1')
-
 
 
 ### Partie C - Résultats
@@ -102,11 +100,11 @@ plt.show()
 
 ### Partie F - Visualisation
 
-# affiche_chiffre_train(0)
+affiche_chiffre_train(0)
 
 Y_predict = modele.predict(X_test)
 
-# print(Y_predict[0])
+print(Y_predict[0])
 
 def affiche_chiffre_test(i):
     plt.imshow(X_test_data[i], cmap='Greys')
