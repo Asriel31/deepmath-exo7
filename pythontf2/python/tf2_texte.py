@@ -61,7 +61,7 @@ modele.fit(X_train, Y_train, epochs=10, batch_size=32)
 
 # Partie D. Résultats
 
-score = modele.evaluate(X_test, Y_test, verbose=0)
+score = modele.evaluate(X_test, Y_test, verbose='0')
 print('Test erreur (loss) :', score[0])
 print('Test précision (accuracy) :', score[1])
 

@@ -40,7 +40,7 @@ modele.add(Dense(p, activation='relu'))
 modele.add(Dense(p, activation='relu'))
 modele.add(Dense(1, activation='sigmoid'))
 
-mysgd = optimizers.SGD(lr = 0.1, decay=1e-6, momentum=0.9, nesterov=True)
+mysgd = optimizers.SGD(learning_rate = 0.1, decay=1e-6, momentum=0.9, nesterov=True)
 modele.compile(loss='binary_crossentropy', optimizer=mysgd, metrics=['accuracy'])
 
 print(modele.summary())
