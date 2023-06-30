@@ -1,8 +1,8 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 import matplotlib.pyplot as plt
 # COPIER-COLLER A PARTIR D'ICI
 

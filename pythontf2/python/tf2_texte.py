@@ -4,14 +4,13 @@
 
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import imdb
+from keras.datasets import imdb
 
 nb_mots_total = 5000   # On ne garde que les n=1000 mots les plus fréquents 
 nb_mots_texte = 50     # Pour chaque critique on ne garde que 50 mots 
@@ -57,10 +56,8 @@ modele.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy']
 
 print(modele.summary())
 
-
 # Partie C. Apprentissage
 modele.fit(X_train, Y_train, epochs=10, batch_size=32)
-
 
 # Partie D. Résultats
 
@@ -68,9 +65,7 @@ score = modele.evaluate(X_test, Y_test, verbose=0)
 print('Test erreur (loss) :', score[0])
 print('Test précision (accuracy) :', score[1])
 
-
 Y_predict = modele.predict(X_test)
-
 
 # Afficher une critique et sa note 
 def affiche_texte_test(num):
