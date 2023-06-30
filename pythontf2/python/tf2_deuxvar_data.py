@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot (projection='3d')
 ax.set_xlabel('axe x')
 ax.set_ylabel('axe y')
 ax.set_zlabel('axe z')
@@ -30,7 +30,3 @@ plt.tight_layout()
 ax.view_init(20, -45)
 # plt.savefig('tf2-deuxvar-fonction.png')
 plt.show()
-
-
-
-

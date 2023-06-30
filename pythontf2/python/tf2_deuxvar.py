@@ -1,8 +1,8 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Partie A. Données
 
@@ -60,7 +60,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure()
-ax = plt.axes(projection='3d')
+ax = fig.add_subplot (projection='3d')
 ax.set_xlabel('axe x')
 ax.set_ylabel('axe y')
 ax.set_zlabel('axe z')

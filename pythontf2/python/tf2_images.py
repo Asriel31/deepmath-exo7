@@ -1,13 +1,12 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import cifar10
+from keras.datasets import cifar10
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = cifar10.load_data()
 
@@ -27,7 +26,7 @@ X_test = X_test/255
 import matplotlib.pyplot as plt
 
 def affiche_images(debut):
-    plt.axis('off')
+    #plt.axis('off')
     for i in range(9):
         plt.subplot(330 + 1 + i)
         print(Y_train_data[i+debut][0])
@@ -68,7 +67,7 @@ modele.fit(X_train, Y_train, epochs=1, batch_size=32)
 
 # Partie D. Résultats et visualisation
 
-score = modele.evaluate(X_test, Y_test, verbose=0)
+score = modele.evaluate(X_test, Y_test, verbose='0')
 print('Test erreur (loss) :', score[0])
 print('Test précision (accuracy) :', score[1])
 
@@ -76,7 +75,7 @@ print('Test précision (accuracy) :', score[1])
 Y_predict = modele.predict(X_test)
 
 def affiche_images_test(debut):
-    plt.axis('off')
+ #   plt.axis('off')
     for i in range(9):
         plt.subplot(330 + 1 + i)
         image_predite = Y_predict[i]

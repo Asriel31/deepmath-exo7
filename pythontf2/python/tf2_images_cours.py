@@ -1,11 +1,11 @@
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import cifar10
+from keras.datasets import cifar10
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = cifar10.load_data()
 
@@ -29,7 +29,6 @@ modele.add(Dense(p, activation='sigmoid'))
 modele.add(Dense(10, activation='softmax'))
 
 modele.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
 # Partie C. Apprentissage
 
 modele.fit(X_train, Y_train, epochs=5, batch_size=32)

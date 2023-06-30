@@ -1,5 +1,5 @@
 from tensorflow import keras
-from tensorflow.keras.datasets import cifar10
+from keras.datasets import cifar10
 
 # Partie A. Données
 
@@ -17,7 +17,7 @@ X_train = X_train/255
 import matplotlib.pyplot as plt
 
 def affiche_images(debut):
-    plt.axis('off')
+    #plt.axis('off')
     for i in range(9):
         plt.subplot(330 + 1 + i)
         plt.title(labels[Y_train_data[i+debut][0]])

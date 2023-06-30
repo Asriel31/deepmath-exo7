@@ -1,13 +1,13 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import imdb
+from keras.datasets import imdb
 
 nb_mots_total = 1000   # On ne garde que les n=1000 mots les plus fréquents 
 (X_train_data, Y_train), (X_test_data, Y_test) = imdb.load_data(num_words=nb_mots_total)

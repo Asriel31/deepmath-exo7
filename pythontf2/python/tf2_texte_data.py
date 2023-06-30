@@ -4,14 +4,14 @@
 
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import imdb
+from keras.datasets import imdb
 
 nb_mots_total = 1000   # On ne garde que les n=1000 mots les plus fréquents 
 nb_mots_texte = 50     # Pour chaque critique on ne garde que 50 mots 

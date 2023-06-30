@@ -4,14 +4,14 @@
 
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
 
 # Partie A. Données
 
-from tensorflow.keras.datasets import imdb
+from keras.datasets import imdb
 
 nb_mots_total = 1000   # On ne garde que les n=1000 mots les plus fréquents 
 nb_mots_texte = 50     # Pour chaque critique on ne garde que 50 mots 
@@ -54,12 +54,12 @@ list_acc_test = []
 
 for k in range(30):   # Nb d'époques à la main 
     # Apprentissage
-    history = modele.fit(X_train, Y_train, epochs=1, batch_size=32, verbose=2)
+    history = modele.fit(X_train, Y_train, epochs=1, batch_size=32, verbose='2')
     list_loss_train.append(history.history['loss'][0])
     list_acc_train.append(history.history['accuracy'][0])
 
     # Validation sur les données de test
-    score = modele.evaluate(X_test, Y_test, verbose=0)
+    score = modele.evaluate(X_test, Y_test, verbose='0')
     list_loss_test.append(score[0])
     list_acc_test.append(score[1])    
 
