@@ -32,7 +32,7 @@ modele.add(Dense(p, activation='tanh'))
 modele.add(Dense(1, activation='linear'))
 
 # Méthode de gradient : descente de gradient classique améliorée
-mysgd = optimizers.SGD(lr=0.001, decay=1e-7, momentum=0.9, nesterov=True)
+mysgd = optimizers.SGD(learning_rate=0.001, decay=1e-7, momentum=0.9, nesterov=True)
 modele.compile(loss='mean_squared_error', optimizer=mysgd)
 print(modele.summary())
 
