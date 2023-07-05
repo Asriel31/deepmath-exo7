@@ -1,5 +1,6 @@
 import numpy as np
 
+
 # Partie A. Données
 
 # Fonctions à approcher
