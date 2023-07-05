@@ -2,21 +2,20 @@
 
 import numpy as np
 from tensorflow import keras
-# from tensorflow.keras import backend as K
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, Flatten
+from keras import backend as K
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense, Conv2D, Flatten
 
-
-from tensorflow.keras.models import Model
-from tensorflow.keras.models import load_model
+from keras.models import Model
+from keras.models import load_model
 
 import matplotlib.pyplot as plt
 
 ### Partie A - Création des données
 
-from tensorflow.keras.datasets import mnist
-from tensorflow.keras.utils import to_categorical
+from keras.datasets import mnist
+from keras.utils import to_categorical
 
 (X_train_data, Y_train_data), (X_test_data, Y_test_data) = mnist.load_data()
 
@@ -41,7 +40,7 @@ model = load_model('modele_mnist_viz.h5')
 my_layer = 3   # layer nb to be inspected
 
 # redefine model to output right after our hidden layer
-model = Model(inputs=model.inputs, outputs=model.layers[my_layer-1].output)
+model = Model(input=model.inputs, outputs=model.layers[my_layer-1].output)
 
 num_filters = model.layers[my_layer].output_shape[3]
 print("Nom de la sous-couche :",model.layers[my_layer].name)

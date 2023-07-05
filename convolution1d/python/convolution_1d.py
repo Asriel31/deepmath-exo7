@@ -80,7 +80,7 @@ print('h =',h)
 # Partie C - Visualisation
 
 def affichage_convolution(f,g,mode='same'):
-	h = np.convolve(f,g,mode=mode)
+	h = np.convolve(f,g,'same')
 
 	ax = plt.subplot(2,1,1)
 	ax.set_title("Entrée f")

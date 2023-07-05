@@ -1,10 +1,10 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras import optimizers
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from keras import optimizers
+from keras.models import Sequential
+from keras.layers import Dense
 
-from tensorflow.keras import backend as K
+from keras import backend as K
 
 modele = Sequential()
 
@@ -51,8 +51,6 @@ loss = modele.train_on_batch(X_train, Y_train)
 poids_apres = modele.get_weights()  # Nouveau poids calculer par tf
 
 modele.set_weights(poids_avant) # Définis les poids à une valeur sauvegardée
-
-
 
 
 # Partie C - Le gradients
