@@ -40,7 +40,7 @@ model = load_model('modele_mnist_viz.h5')
 my_layer = 3   # layer nb to be inspected
 
 # redefine model to output right after our hidden layer
-model = Model(input=model.inputs, outputs=model.layers[my_layer-1].output)
+model = Model(input=Model.input, outputs=Model.layer[my_layer-1].output)
 
 num_filters = model.layers[my_layer].output_shape[3]
 print("Nom de la sous-couche :",model.layers[my_layer].name)

@@ -1,6 +1,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy import signal
 
 
 # Partie A - Importer une image comme un tableau
@@ -40,7 +41,7 @@ g = np.array([[-2,-1,0],[-1,1,1],[0,1,2]])  #  'emboss'
 # g = np.array([[-1,-1,2],[-1,2,-1],[2,-1,-1]])  # 45 degrés
 
 # Partie C - Calcul de la convolution
-from scipy import signal
+
 h = signal.convolve2d(f, g, boundary='fill', mode='same')
 
 
